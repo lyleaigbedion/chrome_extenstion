@@ -1,0 +1,31 @@
+{
+  "name": "Touch",
+  "version": "0.7.1",
+  "manifest_version": 2,
+  "description": "Pick a color",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "permissions": [
+    "tabs","alarms",
+    "contentSettings"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "lib/jquery-1.11.1.min.js","lib/p5.js","lib/p5.dom.js","inject.js"
+      ]
+    }
+  ]
+}
